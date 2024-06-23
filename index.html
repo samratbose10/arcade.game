@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="level1">
         <h1>Type the Sentence Backwards</h1>
         <div id="sentence-container">
             Hack on something cool! Examples: making your own PCB, building your own site, creating an app.
@@ -15,6 +15,35 @@
         <input type="text" id="inputField" placeholder="Type here...">
         <p id="timer">Time left: <span id="time">10</span> seconds</p>
         <p id="result"></p>
+    </div>
+
+    <div class="container" id="level2" style="display: none;">
+        <h1>Quest: The Enigmatic Hacker's Code</h1>
+        <p>Greetings, young hacker! To unlock the next stage of your quest, you must first decipher the Enigmatic Hacker's Code. Hidden within the depths of the Hack Club Arcade is a treasure trove of knowledge waiting to be discovered. Follow the clues and solve the riddle to reveal the secret!</p>
+        
+        <div id="clue1">
+            <p><strong>Clue 1:</strong></p>
+            <p>"To find where hackers gather to play, seek the page where projects array. A place of creation, with tools and guides, where inspiration and collaboration abide."</p>
+            <p><strong>Hint:</strong> Look for a hub where high school students showcase their creative tech projects and gain new skills.</p>
+            <input type="text" id="answer1" placeholder="Your answer...">
+        </div>
+        
+        <div id="clue2" style="display: none;">
+            <p><strong>Clue 2:</strong></p>
+            <p>"The next clue lies in a place of parts, where you can build with your own arts. Look for the kits that spark delight, and tools that help you build just right."</p>
+            <p><strong>Hint:</strong> There's a section where you can rummage for hardware parts and kits to start your project.</p>
+            <input type="text" id="answer2" placeholder="Your answer...">
+        </div>
+        
+        <div id="clue3" style="display: none;">
+            <p><strong>Clue 3:</strong></p>
+            <p>"To solve this quest and earn your prize, find where the community thrives. A virtual space where hackers chat, and share their projects, just like that."</p>
+            <p><strong>Hint:</strong> Hack Club's communication platform where members interact and share ideas.</p>
+            <input type="text" id="answer3" placeholder="Your answer...">
+        </div>
+
+        <button id="submitAnswers">Submit Answers</button>
+        <p id="questResult"></p>
     </div>
     <script src="script.js"></script>
 </body>
