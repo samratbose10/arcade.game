@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const sentence = "Hack on something cool! Examples: making your own PCB, building your own site, creating an app.";
+    const sentence = "app.";
     const reversedSentence = sentence.split('').reverse().join('');
     const inputField = document.getElementById("inputField");
     const result = document.getElementById("result");
@@ -47,11 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     startTimer();
 
     submitAnswers.addEventListener("click", function () {
-        const answer1 = document.getElementById("answer1").value.trim();
-        const answer2 = document.getElementById("answer2").value.trim();
-        const answer3 = document.getElementById("answer3").value.trim();
+        const answer1 = document.getElementById("answer1").value.trim().toLowerCase();
+        const answer2 = document.getElementById("answer2").value.trim().toLowerCase();
+        const answer3 = document.getElementById("answer3").value.trim().toLowerCase();
 
-        if (answer1 === "The Hack Club Arcade's main page" || answer1 === "Hack Club") {
+        const correctAnswers1 = ["the hack club arcade's main page", "hack club", "main page"];
+        const correctAnswers2 = ["the bin section", "hack club", "bin"];
+        const correctAnswers3 = ["the hack club slack community", "hack club", "slack"];
+
+        if (correctAnswers1.includes(answer1)) {
             clue1.style.display = "none";
             clue2.style.display = "block";
         } else {
@@ -60,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (answer2 === "The Bin section" || answer2 === "Hack Club") {
+        if (correctAnswers2.includes(answer2)) {
             clue2.style.display = "none";
             clue3.style.display = "block";
         } else {
@@ -69,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        if (answer3 === "The Hack Club Slack community" || answer3 === "Hack Club") {
+        if (correctAnswers3.includes(answer3)) {
             questResult.textContent = "Congratulations! You've completed the quest!";
             questResult.style.color = "green";
         } else {
